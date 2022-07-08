@@ -4,7 +4,7 @@
 # Tailor to simple project , adjust it by xcb
 ################################################################################
 
-include ../makefile_cfg
+include ./makefile_cfg
 	
 ################################################################################
 
@@ -15,6 +15,7 @@ SDK_PATH =$(LICHEE_DIR)/platform/framework/auto/sdk_lib
 CROSS_COMPILE := $(LICHEE_DIR)/out/t507/demo2.0/longan/buildroot/host/bin/aarch64-linux-gnu-
 CC := $(CROSS_COMPILE)gcc
 CPP := $(CROSS_COMPILE)g++
+STRIP := $(CROSS_COMPILE)strip
 ################################################################################
 
 DEFINES += -DUSE_LOGCAT
@@ -90,6 +91,7 @@ $(CPPOBJS) : %.o: %.cpp
 
 $(BIN) : $(COBJS) $(CPPOBJS) 
 	$(CPP) -o $(BIN) -lpthread $(CPPOBJS) $(INC) $(LDFLAGS) $(LIBS) $(CEDAR_LINK_NEW) -fpermissive
+	$(STRIP) $(BIN)
 
 clean:
 	 find . -name "*.o" -exec rm -rf {} \;
