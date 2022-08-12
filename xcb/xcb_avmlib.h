@@ -25,7 +25,8 @@ camera data :DMA(Direct Memory Access)
 ////////define struct
 
 //////////////added by zliu 20200315 for adjusting virtual camera in real time
-struct VirCamPara {
+struct VirCamPara
+{
   float fCamPosition[3];
   float fCamFrontDirect[3];
   float fCamUpDirect[3];
@@ -34,7 +35,8 @@ struct VirCamPara {
   int nOutputImgH;
   int nOutputImgW;
 };
-typedef struct _SideViewVirCamPara {
+typedef struct _SideViewVirCamPara
+{
   ////////////////////在原始1920*1280的图像上，截取的区域，越大则视野范围越大
   int nStartPixelX[2];
   int nEndPixelX[2];
@@ -55,12 +57,13 @@ typedef struct _SideViewVirCamPara {
   float fLine[8];
 } SideViewVirCamPara;
 ///////////////////////////////////////////////////////////////////
-typedef struct {
+typedef struct
+{
   int id;
   int vertex_number;   // 模型顶点数
   int tri_face_number; //三角片元总数
   GLuint *buffers;     // vertex buffer
-                   // id（顶点坐标+4*纹理坐标+4*混合权重+三角片元索引）
+                       // id（顶点坐标+4*纹理坐标+4*混合权重+三角片元索引）
   int verTexGroupNum[6];
   int tri_face_groupNum[6];
   GLuint *texture_id;
@@ -68,30 +71,34 @@ typedef struct {
 } Patch;
 
 ///////define camera state ,  默认状态下是工作状态
-typedef struct {
+typedef struct
+{
   bool camera_state[6] = {true, true, true, true, true, true};
 } avm_camera_type_t;
 
-typedef struct {
+typedef struct
+{
   Patch *stitching;
   GLuint prog;        // shader program
   int mode = 0;       // 0:unfold,1:fold
   bool isDMA = false; // false:not support DMA;true:support DMA;
   void *modelsSix[2];
-  void * pDynamicLeftModel;
-  void * pDynamicRightModel;
-  void * pDynamicFrontModel;
+  void *pDynamicLeftModel;
+  void *pDynamicRightModel;
+  void *pDynamicFrontModel;
 } avm_stitching_type_t;
-typedef struct {
-  int type; //设置2d或3d的类型：type=0，表示2d，type=1，表示3d
-  int id; //设置更新纹理的纹理索引值，注意：type=1时，id=0，车身纹理；id=1，引擎内部纹理，id=2，内饰纹理，id=3，前车门纹理，id=4，车后门纹理，id=5，轮胎纹理
+typedef struct
+{
+  int type;              //设置2d或3d的类型：type=0，表示2d，type=1，表示3d
+  int id;                //设置更新纹理的纹理索引值，注意：type=1时，id=0，车身纹理；id=1，引擎内部纹理，id=2，内饰纹理，id=3，前车门纹理，id=4，车后门纹理，id=5，轮胎纹理
   int width;             //设置纹理图片的宽
   int height;            //设置纹理图片的高
   int channels;          //设置纹理图片的通道数
   unsigned char *pixels; //指针指向纹理图片的像素
 } avm_car_skin_type_t;
 
-typedef struct {
+typedef struct
+{
   int iCarWidth;        // 2d car's width
   int iCarLength;       // 2d car's length
   int iBlindAreaWidth;  //设置盲区区域的宽
@@ -120,7 +127,8 @@ door,right rear door,front hood,trunk(Note:default angle is 0)
 @param mvp_wheel_matrix output:wheel matrix
 @param mvp_open_matrix output:door matrix
 */
-typedef struct {
+typedef struct
+{
   float wheel_axis[4][3];
   bool roll = false;
   bool swing = false;
@@ -132,14 +140,16 @@ typedef struct {
   float mvp_wheel_matrix[4][16];
   float mvp_open_matrix[4][16];
 } avm_car_state_type_t;
-typedef struct {
+typedef struct
+{
   int x;
   int y;
   int w;
   int h;
 } ROIParameter;
 
-typedef struct {
+typedef struct
+{
   Patch *singleview;
   Patch *sideView;
   Patch *lineView;
@@ -167,11 +177,12 @@ typedef struct {
 
 } avm_single_type_t;
 
-typedef struct {
-  int win_x; // view port: starting position x coordinate ,Note:on the screen
-             // left bottom,unit :pixel
-  int win_y; // view port: starting position y coordinate ,Note:on the screen
-             // left bottom,unit :pixel
+typedef struct
+{
+  int win_x;            // view port: starting position x coordinate ,Note:on the screen
+                        // left bottom,unit :pixel
+  int win_y;            // view port: starting position y coordinate ,Note:on the screen
+                        // left bottom,unit :pixel
   int win_width;        // view port: width,Note:unit pixel
   int win_height;       // view port: height,NOte:unit pixel
   float ex, ey, ez;     // the camera's  position (x,y,z)
@@ -267,7 +278,6 @@ void xcb_avmlib_stitching_TopView_Render_SixCamera(
     avm_camera_type_t *camera, GLuint *g_texture_id, int index,
     float *fGreyRatio1);
 
-
 ///////////////for dynamic stitching model render/////////////////////
 int xcb_avmlib_stitching_Dynamicmodel_Init(const char *filename,
                                            avm_stitching_type_t *avm_stitching_type);
@@ -275,23 +285,22 @@ int xcb_avmlib_stitching_Dynamicmodel_Init(const char *filename,
 int xcb_avmlib_stitching_Dynamicmodel_Exit(avm_stitching_type_t *avm_stitching_type);
 
 ////////index: index of camera; vertexnum: 某路面片顶点数量
-float * xcb_avmlib_stitching_ObtainVertexCorSixRoad(
-  avm_stitching_type_t *avm_stitching_type, 
-  int index, int & vertexnum,int type);
+float *xcb_avmlib_stitching_ObtainVertexCorSixRoad(
+    avm_stitching_type_t *avm_stitching_type,
+    int index, int &vertexnum, int type);
 
 void xcb_avmlib_stitching_UpdateTexcoord_SixRoad(
-  avm_stitching_type_t *avm_stitching_type, int index, 
-  float * fposition, int nvertexnum, int type);
+    avm_stitching_type_t *avm_stitching_type, int index,
+    float *fposition, int nvertexnum, int type);
 
-void xcb_avmlib_stitching_ObtainUpdatedWeightandCordinates_SixRoad(avm_stitching_type_t *avm_stitching_type, int index, 
-            float * fOrigPos, float * fposition, int nvertexnum, float * fwei, float * fCor, int type);
+void xcb_avmlib_stitching_ObtainUpdatedWeightandCordinates_SixRoad(avm_stitching_type_t *avm_stitching_type, int index,
+                                                                   float *fOrigPos, float *fposition, int nvertexnum, float *fwei, float *fCor, int type);
 
-void xcb_avmlib_stitching_UpdateCoord_Weight_SixRoad(avm_stitching_type_t *avm_stitching_type, int index, 
-            float * fwei, float * fCor, int nvertexnum, int type);  
+void xcb_avmlib_stitching_UpdateCoord_Weight_SixRoad(avm_stitching_type_t *avm_stitching_type, int index,
+                                                     float *fwei, float *fCor, int nvertexnum, int type);
 
 ////////////angle: -90 --------- 90
 int xcb_avmlib_stithing_Dynamicmodel_update(avm_stitching_type_t *avm_stitching_type, int angle);
-
 
 ///////////car//////////////
 /*initialize car variable
@@ -427,7 +436,8 @@ void xcb_avmlib_Update_TextureBuffer_Single(const unsigned char *pixel,
                                             GLuint *g_texture_id);
 
 ////////////////////////////////////////////Drawpng/////////////////////
-typedef struct {
+typedef struct
+{
   int win_x;               // the x coordate display on the window
   int win_y;               // the y coordate display on the window
   int width;               // the image's width
@@ -435,7 +445,8 @@ typedef struct {
   GLenum format = GL_RGBA; // default format
   unsigned char *texture;
 } png_texture_t;
-typedef struct {
+typedef struct
+{
   int win_x;      // 窗口显示起始位置X坐标
   int win_y;      //窗口显示起始位置Y坐标
   int width;      //窗口显示的宽
@@ -451,6 +462,7 @@ int xcb_avmlib_Draw_Png_Exit(avm_ui_type_t *avm_ui_type);
 avm_ui_type_t *avm_ui_type//指针指向ui
 int layer_index//每个avm_ui_type_t对应的图层的索引
 */
+////layer_index:0:后;////
 int xcb_avmlib_Draw_Png(avm_ui_type_t *avm_ui_type, int layer_index);
 /*
 avm_ui_type_t *avm_ui_type////指针指向ui
@@ -464,30 +476,30 @@ int xcb_avmlib_Update_Png(avm_ui_type_t *avm_ui_type, int layer_index,
 void xcb_avmlib_Update_TextureBuffer_Line(png_texture_t *png_texture,
                                           GLuint *g_texture_id, int iCnt);
 
-
-
-////////////////////////draw bottom image, 
-////////////////////////the difference betweent it with the ui image 
+////////////////////////draw bottom image,
+////////////////////////the difference betweent it with the ui image
 ////////////////////////is that the coordinates of the bottom image is world coordinates, not pixel of screen
-typedef struct {
-  float fPointPosition[5][3];     //图片显示位置顶点物理坐标
+typedef struct
+{
+  float fPointPosition[5][3]; //图片显示位置顶点物理坐标
   float fCor_x;
   float fCor_y;
   float fWidth;
   float fHeight;
-  Patch *layers;  ////初始化开辟空间，退出释放
-  GLuint prog;    // shader program
+  Patch *layers; ////初始化开辟空间，退出释放
+  GLuint prog;   // shader program
 } avm_bottomImg_type_t;
 
 int xcb_avmlib_bottomImg_Init(avm_bottomImg_type_t *avm_bottomImg_type);
 int xcb_avmlib_bottomImg_Exit(avm_bottomImg_type_t *avm_bottomImg_type);
-int xcb_avmlib_Update_bottomImgPosition(avm_bottomImg_type_t *avm_bottomImg_type, float * fPosition);
+int xcb_avmlib_Update_bottomImgPosition(avm_bottomImg_type_t *avm_bottomImg_type, float *fPosition);
 int xcb_avmlib_Update_bottomImg(avm_bottomImg_type_t *avm_bottomImg_type, png_texture_t *png_texture);
 int xcb_avmlib_Draw_bottomImg(avm_bottomImg_type_t *avm_bottomImg_type, ViewParameter &viewParameter);
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////full screen//////////////////
-typedef struct {
+typedef struct
+{
   int win_x;
   int win_y;
   int width;
@@ -501,6 +513,13 @@ int xcb_avmlib_screen_Init(const char *auth_file, avm_screen_type_t *avm_screen_
 type=1,
 */
 int xcb_avmlib_screen_Gen_VBO(avm_screen_type_t *avm_screen_type);
+/*
+subImgROI: 窗口对应画面的子区域。subImgROI.x, subImgROI.y 对应的画面左上角起始点坐标，w,h对应原图的宽高
+nImgWidth, nImgHeight：图像宽高
+GLuint *g_textureid: 视频数据句柄列表
+index: 对应显示的图像标记。0, back; 1, left front; 2, front; 3, right front; 4, left back; 5, right back
+nFlip: 是否进行左右翻转。0, 画面不做左右翻转；1, 画面进行左右翻转
+*/
 int xcb_avmlib_full_screen_Render(avm_screen_type_t *avm_screen_type,
                                   ROIParameter &subImgROI,
                                   avm_camera_type_t *camera, int nImgWidth,
@@ -536,37 +555,40 @@ int xcb_avmlib_Update_TextureBuffer_DMA(GLeglImageOES p_Img,
 ///////////////////lines
 
 /////////注意，单位毫米/////////
-typedef struct {
+typedef struct
+{
   int width;    //线图片的宽
   int heigth;   //线图片的高
   int channels; //线图片的通道数
   unsigned char
       *pixel; //指针指向使用的纹理图片的像素值，默认四通道的纹理图片，即RGBA
 } Lines_Texture;
-typedef struct {
-  int thick;           //设置静态轨迹线的粗细
-  int scale_length;    //设置刻度尺的长度
-  int stepDistance[3]; //分别表示刻度尺距车头或车尾线的距离
-  GLuint *texture_id; //存储静态线使用纹理的id，初始化开辟资源，
+typedef struct
+{
+  int thick;            //设置静态轨迹线的粗细
+  int scale_length;     //设置刻度尺的长度
+  int stepDistance[3];  //分别表示刻度尺距车头或车尾线的距离
+  GLuint *texture_id;   //存储静态线使用纹理的id，初始化开辟资源，
   Lines_Texture tex[3]; //指向使用图片的纹理,刻度尺的和纹理一一对应
-  ViewParameter *view; //指针指向鸟瞰图图的虚拟相机
-  Patch *lines;        //初始化开辟资源，退出释放资源
-  bool flag;           //标识是否显示静态轨迹线
+  ViewParameter *view;  //指针指向鸟瞰图图的虚拟相机
+  Patch *lines;         //初始化开辟资源，退出释放资源
+  bool flag;            //标识是否显示静态轨迹线
 } Lines_Static;
 
 // Note:unit:milimeter
-typedef struct {
-  int iCarLength;     //设置车长
-  int iLineDistance;  //设施两侧线之间的距离
-  int iFrontWheelDis; //车前轮轴心距车头的距离
-  int iRearWheelDis;  //车后轮轴心距车尾的距离
-  int iWheelBase;     //前后车轮轴心之间的间距；
-  float fMaxAngle;    //轮胎摆动的最大角度，注意此值为正值
-  float fAngle; //轮胎摆动的角度，大于0向右，小于0向左，等于0，未摆动
+typedef struct
+{
+  int iCarLength;             //设置车长
+  int iLineDistance;          //设施两侧线之间的距离
+  int iFrontWheelDis;         //车前轮轴心距车头的距离
+  int iRearWheelDis;          //车后轮轴心距车尾的距离
+  int iWheelBase;             //前后车轮轴心之间的间距；
+  float fMaxAngle;            //轮胎摆动的最大角度，注意此值为正值
+  float fAngle;               //轮胎摆动的角度，大于0向右，小于0向左，等于0，未摆动
   int type;                   // type=0:前进轨迹线,type=1:后退轨迹线
   GLuint prog;                // shader program
   Lines_Static *lines_static; //初始化开辟空间退出释放
-  bool isOriginal = true; //设置显示再原始图像显示的线还是矫正图像的线
+  bool isOriginal = true;     //设置显示再原始图像显示的线还是矫正图像的线
 } avm_lines_type_t;
 int xcb_avm_lines_Init(avm_lines_type_t *avm_lines_type);
 int xcb_avm_line_Gen_VBO(avm_lines_type_t *avm_lines_type,
@@ -574,7 +596,8 @@ int xcb_avm_line_Gen_VBO(avm_lines_type_t *avm_lines_type,
 int xcb_avm_line_Exit(avm_lines_type_t *avm_lines_type);
 int xcb_avm_lines_Render(avm_lines_type_t *avm_lines_type);
 /////////////// ADAS Auxiliary display//////////////
-typedef struct {
+typedef struct
+{
   Patch *adas;
   GLuint prog; // shader program
 } adas_auxiliary_type_t;

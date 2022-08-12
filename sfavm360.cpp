@@ -1,7 +1,5 @@
 /******************************************************************************
-
                   xcb 版权所有 (C), 2017-2020,
-
  ******************************************************************************
   文 件 名   :
   版 本 号   : V1.1
@@ -14,7 +12,6 @@
   1.日    期   : 2020年4月1日
     作    者    : pengtao
     修改内容   : 创建文件
-
 ******************************************************************************/
 #include "sfavm360.h"
 
@@ -252,27 +249,27 @@ void *CameraDisplay0(void *arg)
 
     switch (out_fmt)
     {
-    case 0:
-        privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_SBGGR8;
-        break;
-    case 1:
-        privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_YUV420M;
-        break;
-    case 2:
-        privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_YUV420;
-        break;
-    case 3:
-        privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_NV12M;
-        break;
-    case 4:
-        privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_NV21;
-        break;
-    case 5:
-        privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_NV61;
-        break;
-    default:
-        privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_YUV420M;
-        break;
+        case 0:
+            privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_SBGGR8;
+            break;
+        case 1:
+            privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_YUV420M;
+            break;
+        case 2:
+            privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_YUV420;
+            break;
+        case 3:
+            privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_NV12M;
+            break;
+        case 4:
+            privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_NV21;
+            break;
+        case 5:
+            privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_NV61;
+            break;
+        default:
+            privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_YUV420M;
+            break;
     }
 
     privCap[index].vfmt.format.field = V4L2_FIELD_NONE;
@@ -294,8 +291,7 @@ void *CameraDisplay0(void *arg)
         return NULL;
     }
 
-    if (video_set_fmt(media0->video_dev[index], &privCap[index].vfmt, index) <
-            0)
+    if (video_set_fmt(media0->video_dev[index], &privCap[index].vfmt, index) < 0)
     {
         printf("video_set_fmt failed \n");
         pthread_mutex_unlock(&mutex);
@@ -442,27 +438,27 @@ void *CameraDisplay1(void *arg)
 
     switch (out_fmt)
     {
-    case 0:
-        privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_SBGGR8;
-        break;
-    case 1:
-        privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_YUV420M;
-        break;
-    case 2:
-        privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_YUV420;
-        break;
-    case 3:
-        privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_NV12M;
-        break;
-    case 4:
-        privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_NV21;
-        break;
-    case 5:
-        privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_NV61;
-        break;
-    default:
-        privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_YUV420M;
-        break;
+        case 0:
+            privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_SBGGR8;
+            break;
+        case 1:
+            privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_YUV420M;
+            break;
+        case 2:
+            privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_YUV420;
+            break;
+        case 3:
+            privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_NV12M;
+            break;
+        case 4:
+            privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_NV21;
+            break;
+        case 5:
+            privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_NV61;
+            break;
+        default:
+            privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_YUV420M;
+            break;
     }
 
     privCap[index].vfmt.format.field = V4L2_FIELD_NONE;
@@ -485,7 +481,7 @@ void *CameraDisplay1(void *arg)
     }
 
     if (video_set_fmt(media0->video_dev[index], &privCap[index].vfmt, index) <
-            0)
+        0)
     {
         printf("video_set_fmt failed \n");
         pthread_mutex_unlock(&mutex);
@@ -635,27 +631,27 @@ void *CameraDisplay2(void *arg)
 
     switch (out_fmt)
     {
-    case 0:
-        privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_SBGGR8;
-        break;
-    case 1:
-        privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_YUV420M;
-        break;
-    case 2:
-        privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_YUV420;
-        break;
-    case 3:
-        privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_NV12M;
-        break;
-    case 4:
-        privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_NV21;
-        break;
-    case 5:
-        privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_NV61;
-        break;
-    default:
-        privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_YUV420M;
-        break;
+        case 0:
+            privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_SBGGR8;
+            break;
+        case 1:
+            privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_YUV420M;
+            break;
+        case 2:
+            privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_YUV420;
+            break;
+        case 3:
+            privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_NV12M;
+            break;
+        case 4:
+            privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_NV21;
+            break;
+        case 5:
+            privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_NV61;
+            break;
+        default:
+            privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_YUV420M;
+            break;
     }
 
     privCap[index].vfmt.format.field = V4L2_FIELD_NONE;
@@ -678,7 +674,7 @@ void *CameraDisplay2(void *arg)
     }
 
     if (video_set_fmt(media0->video_dev[index], &privCap[index].vfmt, index) <
-            0)
+        0)
     {
         printf("video_set_fmt failed \n");
         pthread_mutex_unlock(&mutex);
@@ -760,7 +756,7 @@ void *CameraDisplay2(void *arg)
 
         // #if DVRONOFF
         //     XCB_ScaleResize(pImgForSaveT + 428 + 1280 * 360, buf2->planes[0].mem, pImgForSaveT + 1280 * 360 / 2 + 1280 * 720 + 428, buf2->planes[0].mem + 1280 * 720, 1280, 420, 360);
-        //     //	XCB_ScaleResize(pImgForSaveT+428+1280*360, buf2->planes[0].mem, pImgForSaveT+1280*360/2+1280*720, buf2->planes[0].mem+1280*720, 1280, 420, 360);
+        //     //   XCB_ScaleResize(pImgForSaveT+428+1280*360, buf2->planes[0].mem, pImgForSaveT+1280*360/2+1280*720, buf2->planes[0].mem+1280*720, 1280, 420, 360);
 
         // #endif
         finish_flag2 = 1;
@@ -832,27 +828,27 @@ void *CameraDisplay3(void *arg)
 
     switch (out_fmt)
     {
-    case 0:
-        privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_SBGGR8;
-        break;
-    case 1:
-        privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_YUV420M;
-        break;
-    case 2:
-        privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_YUV420;
-        break;
-    case 3:
-        privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_NV12M;
-        break;
-    case 4:
-        privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_NV21;
-        break;
-    case 5:
-        privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_NV61;
-        break;
-    default:
-        privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_YUV420M;
-        break;
+        case 0:
+            privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_SBGGR8;
+            break;
+        case 1:
+            privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_YUV420M;
+            break;
+        case 2:
+            privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_YUV420;
+            break;
+        case 3:
+            privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_NV12M;
+            break;
+        case 4:
+            privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_NV21;
+            break;
+        case 5:
+            privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_NV61;
+            break;
+        default:
+            privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_YUV420M;
+            break;
     }
 
     privCap[index].vfmt.format.field = V4L2_FIELD_NONE;
@@ -1078,27 +1074,27 @@ void *CameraDisplay4(void *arg)
 
     switch (out_fmt)
     {
-    case 0:
-        privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_SBGGR8;
-        break;
-    case 1:
-        privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_YUV420M;
-        break;
-    case 2:
-        privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_YUV420;
-        break;
-    case 3:
-        privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_NV12M;
-        break;
-    case 4:
-        privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_NV21;
-        break;
-    case 5:
-        privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_NV61;
-        break;
-    default:
-        privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_YUV420M;
-        break;
+        case 0:
+            privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_SBGGR8;
+            break;
+        case 1:
+            privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_YUV420M;
+            break;
+        case 2:
+            privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_YUV420;
+            break;
+        case 3:
+            privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_NV12M;
+            break;
+        case 4:
+            privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_NV21;
+            break;
+        case 5:
+            privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_NV61;
+            break;
+        default:
+            privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_YUV420M;
+            break;
     }
 
     privCap[index].vfmt.format.field = V4L2_FIELD_NONE;
@@ -1120,7 +1116,7 @@ void *CameraDisplay4(void *arg)
     }
 
     if (video_set_fmt(media0->video_dev[index], &privCap[index].vfmt, index) <
-            0)
+        0)
     {
         printf("video_set_fmt failed \n");
         pthread_mutex_unlock(&mutex);
@@ -1269,27 +1265,27 @@ void *CameraDisplay5(void *arg)
 
     switch (out_fmt)
     {
-    case 0:
-        privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_SBGGR8;
-        break;
-    case 1:
-        privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_YUV420M;
-        break;
-    case 2:
-        privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_YUV420;
-        break;
-    case 3:
-        privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_NV12M;
-        break;
-    case 4:
-        privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_NV21;
-        break;
-    case 5:
-        privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_NV61;
-        break;
-    default:
-        privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_YUV420M;
-        break;
+        case 0:
+            privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_SBGGR8;
+            break;
+        case 1:
+            privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_YUV420M;
+            break;
+        case 2:
+            privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_YUV420;
+            break;
+        case 3:
+            privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_NV12M;
+            break;
+        case 4:
+            privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_NV21;
+            break;
+        case 5:
+            privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_NV61;
+            break;
+        default:
+            privCap[index].vfmt.format.pixelformat = V4L2_PIX_FMT_YUV420M;
+            break;
     }
 
     privCap[index].vfmt.format.field = V4L2_FIELD_NONE;
@@ -1502,7 +1498,7 @@ void *DvrData0(void *arg)
                 //////////////
 
                 //////////////////////////////////
-                record_process(pImgForSave, 1280, 720);
+                record_process(pImgForSave, 1280, 720);//录像
                 usleep(23 * 1000);
             }
             else
@@ -1677,7 +1673,7 @@ int init_eglimg_dmafd(void)
 //========================================================================
 //========================================================================
 //========================================================================
-void nv21_2_nv61(unsigned char *dst_61, unsigned char *src_21)
+void nv21_2_nv61(unsigned char *dst_61, unsigned char *src_21)//图像格式的转换
 {
     int width = 1280;
     int height = 720;
@@ -1733,10 +1729,12 @@ void render_init(void)
     sprintf(path3DParams, "%s/3D_Params", g_pGivenModelDir);
     sprintf(pathBottomPng, "%s/shadow.png", g_pPngDir);
 
-    xcb_avmlib_Window_Init(SCREEN_W, SCREEN_H, g_egl_display, g_egl_surface);
+    xcb_avmlib_Window_Init(SCREEN_W, SCREEN_H, g_egl_display, g_egl_surface);//生成一个显示图像的窗口
+
 
 #if ISDMA == 1
-    xcb_avmlib_Gen_TextureBuffer_DMA(NUM_TEXTURE, g_texture_id);
+    xcb_avmlib_Gen_TextureBuffer_DMA(NUM_TEXTURE, g_texture_id);//DMA 方式从摄像头获取数据到显示设备
+
     g_stitching_Handle.isDMA = true;
 
     g_avm_screen.win_x = 0;
@@ -1744,13 +1742,17 @@ void render_init(void)
     g_avm_screen.width = 1280;
     g_avm_screen.height = 720;
     g_avm_screen.isDMA = true;
-    xcb_avmlib_screen_Init(NULL, &g_avm_screen);
-    xcb_avmlib_screen_Gen_VBO(&g_avm_screen);
+//    gettimeofday(&test2, NULL);
+    xcb_avmlib_screen_Init(NULL, &g_avm_screen);//初始化显示
+//    gettimeofday(&test1, NULL);
+//    Time1 = 1000000 * (test1.tv_sec - test2.tv_sec) + test1.tv_usec - test2.tv_usec; //默认微秒为单位
+//    printf("******************************初始化全屏 = %lf(ms)\n", Time1 / 1000);
+    xcb_avmlib_screen_Gen_VBO(&g_avm_screen);//生成 vbo
 
 #else
 
     g_stitching_Handle.isDMA = false;
-    xcb_avmlib_Gen_TextureBuffer(NUM_TEXTURE, g_texture_id);
+    xcb_avmlib_Gen_TextureBuffer(NUM_TEXTURE, g_texture_id);//非DMA 方式从摄像头获取数据到显示设备
 
     g_avm_screen.win_x = 560;
     g_avm_screen.win_y = 0;
@@ -1801,7 +1803,7 @@ void render_init(void)
     fclose(fImg);
     printf("read image end\n");
 
-    nv21_2_nv61(pNV61_B, pNV21_B);
+    nv21_2_nv61(pNV61_B, pNV21_B);//图像格式
     nv21_2_nv61(pNV61_L, pNV21_L);
     nv21_2_nv61(pNV61_F, pNV21_F);
     nv21_2_nv61(pNV61_R, pNV21_R);
@@ -1809,10 +1811,13 @@ void render_init(void)
     nv21_2_nv61(pNV61_R1, pNV21_R1);
 
 #endif
-
+//    gettimeofday(&test2, NULL);
     pthread_mutex_lock(&mutexin);
-    xcb_avmlib_stitching_Init(SAVE_LICENSE_PATH, &g_stitching_Handle); //, SAVE_LICENSE_PATH
+    xcb_avmlib_stitching_Init(SAVE_LICENSE_PATH, &g_stitching_Handle); //拼接//, SAVE_LICENSE_PATH
     pthread_mutex_unlock(&mutexin);
+//    gettimeofday(&test1, NULL);
+//    Time1 = 1000000 * (test1.tv_sec - test2.tv_sec) + test1.tv_usec - test2.tv_usec; //默认微秒为单位
+//    printf("******************************初始化拼接 = %lf(ms)\n", Time1 / 1000);
 
     //  xcb_avmlib_stitching_Gen_VBO_SixCarmera("/extp/app/gpu_data/model2DBowl04road.txt",
     //                                          "/extp/app/gpu_data/model2DBowl04road.txt",
@@ -1822,20 +1827,31 @@ void render_init(void)
     //                                          &g_stitching_Handle, 1);
 
 #ifdef SYS_FOUR_LANE
+    //读取标定生成拼接模型
     xcb_avmlib_stitching_Gen_VBO("/extp/app/gpu_data/BowlModel_2D_four",
                                  "/extp/app/gpu_data_default/BowlModel_2D_four",
-                                 &g_stitching_Handle, 0);
+                                 &g_stitching_Handle, 0);//2D
     xcb_avmlib_stitching_Gen_VBO("/extp/app/gpu_data/BowlModel_3D_four",
                                  "/extp/app/gpu_data_default/BowlModel_3D_four",
-                                 &g_stitching_Handle, 1);
+                                 &g_stitching_Handle, 1);//3D
     printf("xcb_avmlib_stitching_Gen_VBO_SixCarmera success\n");
 #else
+//    gettimeofday(&test2, NULL);
+
     xcb_avmlib_stitching_Gen_VBO_SixCarmera("/extp/app/gpu_data/BowlModel_2D",
                                             "/extp/app/gpu_data_default/BowlModel_2D",
                                             &g_stitching_Handle, 0);
+//    gettimeofday(&test1, NULL);
+//    Time1 = 1000000 * (test1.tv_sec - test2.tv_sec) + test1.tv_usec - test2.tv_usec; //默认微秒为单位
+//    printf("******************************生成2D拼接VBO = %lf(ms)\n", Time1 / 1000);
+//    gettimeofday(&test2, NULL);
+
     xcb_avmlib_stitching_Gen_VBO_SixCarmera("/extp/app/gpu_data/BowlModel_3D",
                                             "/extp/app/gpu_data_default/BowlModel_3D",
                                             &g_stitching_Handle, 1);
+//    gettimeofday(&test1, NULL);
+//    Time1 = 1000000 * (test1.tv_sec - test2.tv_sec) + test1.tv_usec - test2.tv_usec; //默认微秒为单位
+//    printf("******************************生成3D拼接VBO = %lf(ms)\n", Time1 / 1000);
     printf("xcb_avmlib_stitching_Gen_VBO_SixCarmera success\n");
 #endif
     // xcb_avmlib_stitching_Gen_VBO(pathModel2D, pathModel2D_default,
@@ -1862,7 +1878,7 @@ void render_init(void)
     // g_car_Handle.pixel = bottom_texture.texture;
 #ifdef SYS_FOUR_LANE
     png_texture_t car_head_bottom;
-    xcb_avmlib_Load_Png("/extp/app/png_yq/blue.png", car_head_bottom);
+    xcb_avmlib_Load_Png("/extp/app/png_yq/blue.png", car_head_bottom);//加载图片
     png_texture_t car_head_texture;
     xcb_avmlib_Load_Png("/extp/app/png_yq/carhead.png", car_head_texture);
     avm2DCarHandle.fCor_x = -(fInCarWidth + fHalfCarDeltaWidth * 2) / 2; //-1250;//-1450;
@@ -1870,8 +1886,8 @@ void render_init(void)
     avm2DCarHandle.fWidth = (fInCarWidth + fHalfCarDeltaWidth * 2); // 2*1250;//2*1450;
     avm2DCarHandle.fHeight = fInCarLength + fHalfCarDeltaLenth * 2;
     avm2DCarHeadBottom = avm2DCarHandle;
-    xcb_avmlib_bottomImg_Init(&avm2DCarHandle);
-    xcb_avmlib_Update_bottomImg(&avm2DCarHandle, &car_head_texture);
+    xcb_avmlib_bottomImg_Init(&avm2DCarHandle);//底部图像
+    xcb_avmlib_Update_bottomImg(&avm2DCarHandle, &car_head_texture);//更新底部图像
 
     avm2DCarHeadBottom.fCor_y += 80;
     avm2DCarHeadBottom.fCor_x -= 30;
@@ -1921,7 +1937,11 @@ void render_init(void)
     xcb_avmlib_Update_bottomImg(&avm2DCarBodyBottom, &car_body_bottom);
 #else
     png_texture_t car_head_bottom;
+//    gettimeofday(&test2, NULL);
     xcb_avmlib_Load_Png("/extp/app/png_yq/blue.png", car_head_bottom);
+//    gettimeofday(&test1, NULL);
+//    Time1 = 1000000 * (test1.tv_sec - test2.tv_sec) + test2.tv_usec - test_start.tv_usec; //默认微秒为单位
+//    printf("******************************加载一张图片 = %lf(ms)\n", Time1 / 1000);
     png_texture_t car_head_texture;
     xcb_avmlib_Load_Png("/extp/app/png_yq/carhead.png", car_head_texture);
     avm2DCarHandle.fCor_x = -(fInCarWidth + fHalfCarDeltaWidth * 2) / 2; //-1250;//-1450;
@@ -1991,14 +2011,21 @@ void render_init(void)
 #else
     g_single_Handle.isDMA = false;
 #endif
-
-    xcb_avmlib_single_Init(&g_single_Handle);
+//    gettimeofday(&test2, NULL);
+    xcb_avmlib_single_Init(&g_single_Handle);//单视图
+//    gettimeofday(&test1, NULL);
+//    Time1 = 1000000 * (test1.tv_sec - test2.tv_sec) + test1.tv_usec - test2.tv_usec; //默认微秒为单位
+//    printf("******************************单视图初始化 = %lf(ms)\n", Time1 / 1000);
     xcb_avmlib_singleView_Gen_VBO(pathSingleModel, pathSingleModel_default,
                                   &g_single_Handle);
     g_single_Handle.view = 2;
 
     // g_line_handle
-    xcb_avm_lines_Init(&g_line_handle);
+//    gettimeofday(&test2, NULL);
+    xcb_avm_lines_Init(&g_line_handle);//线条
+//    gettimeofday(&test1, NULL);
+//    Time1 = 1000000 * (test1.tv_sec - test2.tv_sec) + test1.tv_usec - test2.tv_usec; //默认微秒为单位
+//    printf("******************************线条初始化 = %lf(ms)\n", Time1 / 1000);
     g_line_handle.iCarLength = 15.6 * 1000;
     g_line_handle.iFrontWheelDis = 10 * 1000;
     g_line_handle.iLineDistance = 3000;
@@ -2042,7 +2069,8 @@ void render_init(void)
     g_line_handle.lines_static->tex[2].width = line[2].width;
     g_line_handle.lines_static->tex[2].pixel = line[2].texture;
 
-    g_line_handle.type = 1;
+    g_line_handle.type = 1;//后退轨迹线
+    gettimeofday(&test2, NULL);
 
     xcb_avm_line_Gen_VBO(&g_line_handle,
                          &g_single_Handle, 0, -3000);
@@ -2053,7 +2081,7 @@ void render_init(void)
     g_t3DViewParams.win_width = 480;
     g_t3DViewParams.win_height = 480;
     g_t3DViewParams.fov = 35.0;
-    g_t3DViewParams.aspect_ratio = (float)480 / 480;
+    g_t3DViewParams.aspect_ratio = (float)480 / 480;//宽高比
     g_t3DViewParams.ex = 0;
     g_t3DViewParams.ey = 0;
     g_t3DViewParams.ez = 5000; // 4500;
@@ -2092,9 +2120,12 @@ void render_init(void)
     g_car_state_Handle.isOpen[1] = false;
     g_car_state_Handle.isOpen[2] = false;
     g_car_state_Handle.isOpen[3] = false;
-    xcb_avmlib_3d_Set_ViewParameter(g_t3DViewParams, &g_car_state_Handle);
+    xcb_avmlib_3d_Set_ViewParameter(g_t3DViewParams, &g_car_state_Handle);//设置3D视图的参数
+
 
     // ViewFront 单视图前后
+    //单视图前
+
     g_t2DViewParams.win_x = 0;
     g_t2DViewParams.win_y = 0;
     g_t2DViewParams.win_width = (698 + 100 + 100); //-60;
@@ -2109,7 +2140,9 @@ void render_init(void)
     g_t2DViewParams.tz = 0;
     xcb_avmlib_2d_Set_ViewParameter(g_t2DViewParams);
 
+
     // FLView========单视图前左
+    //单视图前左
     g_tFLViewParams.win_x = R_X;
     g_tFLViewParams.win_y = R_Y;
     g_tFLViewParams.win_width = R_W;
@@ -2125,6 +2158,7 @@ void render_init(void)
     xcb_avmlib_2d_Set_ViewParameter(g_tFLViewParams);
 
     // FRView========单视图前右
+    //单视图前右
     g_tFRViewParams.win_x = R_X;
     g_tFRViewParams.win_y = R_Y;
     g_tFRViewParams.win_width = R_W;
@@ -2139,7 +2173,7 @@ void render_init(void)
     g_tFRViewParams.tz = 0;
     xcb_avmlib_2d_Set_ViewParameter(g_tFRViewParams);
 
-    mode_load_3d = 1;
+    mode_load_3d = 1;//3D模式
 
     printf("Render init!\n");
 
@@ -2228,6 +2262,7 @@ void render_init(void)
     // BirdView======================================左视窗口:
     // 显示2D俯视图============================ Bird 2d car png 左视窗口:
     // 显示2D俯视图中的车的图片
+
     g_tBirdViewParams.win_x = LANE6_STITCHING_WIN_X + 800 + 40 + 60; // 300
     g_tBirdViewParams.win_y = LANE6_STITCHING_WIN_Y;
     g_tBirdViewParams.win_width = LANE6_STITCHING_WIN_W - 100;
@@ -2241,9 +2276,10 @@ void render_init(void)
     g_tBirdViewParams.ty = -fInAxis2carcenter; //-4850;
     g_tBirdViewParams.tz = 0;
     xcb_avmlib_2d_Set_ViewParameter(g_tBirdViewParams);
+
     printf("birdview fInAxis2carcenter %f\r\n", fInAxis2carcenter);
 
-
+    //俯视图全屏
     g_tBirdViewParamsfullscreen.win_x = 0; // 300
     g_tBirdViewParamsfullscreen.win_y = 0;
     g_tBirdViewParamsfullscreen.win_width = 1280;
@@ -2269,9 +2305,17 @@ void render_init(void)
     avm_fboColorTransfer_type.height = SCREEN_H;
 
     printf("---debug xcb_avmlib_set_fboscreen_Init\n");
-    xcb_avmlib_set_fboscreen_Init(&avm_fboscreen_type);
+//    gettimeofday(&test2, NULL);
+    xcb_avmlib_set_fboscreen_Init(&avm_fboscreen_type);//创建 fbo 的buffer
+//    gettimeofday(&test1, NULL);
+//    Time1 = 1000000 * (test1.tv_sec - test2.tv_sec) + test1.tv_usec - test2.tv_usec; //默认微秒为单位
+//    printf("******************************创建 fbo 的buffer = %lf(ms)\n", Time1 / 1000);
     printf("---debug xcb_avmlib_set_fboRGBA2YUVA_Init\n");
+//    gettimeofday(&test2, NULL);
     xcb_avmlib_set_fboRGBA2YUVA_Init(&avm_fboColorTransfer_type);
+//    gettimeofday(&test1, NULL);
+//    Time1 = 1000000 * (test1.tv_sec - test2.tv_sec) + test1.tv_usec - test2.tv_usec; //默认微秒为单位
+//    printf("******************************创建YUVA 的buffer = %lf(ms)\n", Time1 / 1000);
 }
 
 int lastra = -101;
@@ -2531,11 +2575,11 @@ void render_normal_loop(void)
 
     xcb_avm_car_state_gear_t &emGear = tState.emGear;
     xcb_avm_car_state_light_t &tLight = tState.tLight;
-
     // unsigned char ganglemcu[6] = {0, 0, 0, 0, 0, 0};
     // unsigned char gmcuh = 0, gmcul = 0;
     gmcuh = msg.u8VerInt;
     gmcul = msg.u8VerFrac;
+
 
     memcpy(ganglemcu, msg.ganglemcu, 6);
 
@@ -2600,23 +2644,23 @@ void render_normal_loop(void)
         }
     }
 
-    if (view == REVERSE_MODE_XINGTU_VIEW_BACK)
+    if (view == REVERSE_MODE_XINGTU_VIEW_BACK)//倒车
     {
         // printf("REVERSE_MODE_XINGTU_VIEW_BACK \r\n");
         nDisplayMode = 0;
     }
-    if (view == STEERING_MODE_XINGTU_LEFTDOWN)
+    if (view == STEERING_MODE_XINGTU_LEFTDOWN)//左转
     {
         // printf("STEERING_MODE_XINGTU_LEFTDOWN \r\n");
         nDisplayMode = 2;
     }
-    if (view == STEERING_MODE_XINGTU_RIGHTDOWN)
+    if (view == STEERING_MODE_XINGTU_RIGHTDOWN)//右转
     {
         // printf("STEERING_MODE_XINGTU_LEFTDOWN \r\n");
         nDisplayMode = 3;
     }
 
-    if (view == GENERAL_MODE_XINGTU_VIEW_FRONT)
+    if (view == GENERAL_MODE_XINGTU_VIEW_FRONT)//前进
     {
         // printf("GENERAL_MODE_XINGTU_VIEW_FRONT \r\n");
         if (app_display_flag == 0)
@@ -2625,7 +2669,7 @@ void render_normal_loop(void)
             nDisplayMode = 4;
     }
     if (nAlarmState == 1 || nAlarmState == 2 || nAlarmState == 4 ||
-            nAlarmState == 8 || nAlarmState == 12)
+        nAlarmState == 8 || nAlarmState == 12)//警报状态
     {
         static int nDeltashow = 0;
         nDisplayMode = 0;
@@ -2790,11 +2834,12 @@ void render_normal_loop(void)
     //  sem_wait(&sema[5]);
     //  printf("loop wait end\n");
 
-    xcb_avmlib_set_fboscreen_Inuse(&avm_fboscreen_type);
+    xcb_avmlib_set_fboscreen_Inuse(&avm_fboscreen_type);//告诉GPU之后的所有渲染都是渲染到fbo的buffer中
 
 #if ISDMA == 1
 
 #ifdef SYS_FOUR_LANE
+    //DMA方式从摄像头获取数据到显示设备
     xcb_avmlib_Update_TextureBuffer_DMA(g_elgImage[1], g_texture_id, 0); // B
     xcb_avmlib_Update_TextureBuffer_DMA(g_elgImage[2], g_texture_id, 1); // L
     xcb_avmlib_Update_TextureBuffer_DMA(g_elgImage[0], g_texture_id, 2); // F
@@ -2841,12 +2886,13 @@ void render_normal_loop(void)
 
     // printf("error 3\n");
     // xcb_avmlib_Clean_Screen();
-    xcb_avmlib_Clean_FboScreen();
+    xcb_avmlib_Clean_FboScreen();//清屏
     // printf("lTIme: %f; displaymode: %d\r\n", lTime, nDisplayMode);
 
     // nDisplayMode = 0;
-    if (nDisplayMode == 0)
-    {   ///////birdview + backview
+    if (nDisplayMode == 0)//后退
+    {
+        ///////birdview + backview
         float fratio[6];
         fratio[0] = 1.0;
         fratio[1] = 1.0;
@@ -2856,9 +2902,10 @@ void render_normal_loop(void)
         fratio[5] = 1.0;
         // printf("error 4\n");
 #ifdef SYS_FOUR_LANE
+        //渲染 2D/3D 拼接俯视图
         xcb_avmlib_stitching_TopView_Render(
             &g_stitching_Handle, g_tBirdViewParams, &g_camera_type, g_texture_id, 0,
-            fratio);
+            fratio);//2D拼接
 #else
         xcb_avmlib_stitching_TopView_Render_SixCamera(
             &g_stitching_Handle, g_tBirdViewParams, &g_camera_type, g_texture_id, 0,
@@ -2895,9 +2942,10 @@ void render_normal_loop(void)
         // xcb_avmlib_full_screen_Render(&g_avm_screen, SingleViewFrontROI,
         //                               &g_camera_type, 1280, 720, g_texture_id, 0, 1);
 
+        //单视图渲染
         xcb_avmlib_singleView_Render(&g_single_Handle, g_t2DViewParams,
                                      &g_camera_type, g_texture_id);
-
+        //线条渲染
         xcb_avm_lines_Render(&g_line_handle);
 
         avmOneCharLabelUIHandle.win_x = 448 - 10; // 30;
@@ -2914,12 +2962,15 @@ void render_normal_loop(void)
             xcb_avmlib_Draw_Png(&avmRadarAlarmUIHandle, nAlarmMode - 1);
         }
 
-        syncx = eglCreateSyncKHR(g_egl_display, EGL_SYNC_FENCE_KHR, NULL);
+
+        syncx = eglCreateSyncKHR(g_egl_display, EGL_SYNC_FENCE_KHR, NULL);//首先创建一个EGLSyncKHR 同步对象
+        //阻止并等待同步对象发出信号，
         eglClientWaitSyncKHR(g_egl_display, syncx, EGL_SYNC_FLUSH_COMMANDS_BIT_KHR, 3000000000);
-        eglDestroySyncKHR(g_egl_display, syncx);
+        eglDestroySyncKHR(g_egl_display, syncx);//销毁同步对象
     }
-    else if (nDisplayMode == 1)
-    {   ///////only six splitted screen
+    else if (nDisplayMode == 1)//前进
+    {
+        ///////only six splitted screen
         float fratio[6];
         fratio[0] = 1.0;
         fratio[1] = 1.0;
@@ -2929,6 +2980,7 @@ void render_normal_loop(void)
         fratio[5] = 1.0;
         // printf("error 4\n");
 #ifdef SYS_FOUR_LANE
+        //渲染 2D/3D 拼接画面
         xcb_avmlib_stitching_TopView_Render(
             &g_stitching_Handle, g_tBirdViewParams, &g_camera_type, g_texture_id, 0,
             fratio);
@@ -2965,20 +3017,22 @@ void render_normal_loop(void)
         g_avm_screen.win_y = 0;
         g_avm_screen.width = (698 + 100 + 100); //-60
         g_avm_screen.height = 720;
+        //全屏渲染
         xcb_avmlib_full_screen_Render(&g_avm_screen, SingleViewFrontROI,
-                                      &g_camera_type, 1280, 720, g_texture_id, 2);
+                                      &g_camera_type, 1280, 720, g_texture_id, 2 );
 
         avmOneCharLabelUIHandle.win_x = 448 - 10; // 30;
         avmOneCharLabelUIHandle.win_y = 720 - 100;
 
         xcb_avmlib_Draw_Png(&avmOneCharLabelUIHandle, 1);
-
+        //GPU处理图像
         syncx = eglCreateSyncKHR(g_egl_display, EGL_SYNC_FENCE_KHR, NULL);
         eglClientWaitSyncKHR(g_egl_display, syncx, EGL_SYNC_FLUSH_COMMANDS_BIT_KHR, 3000000000);
         eglDestroySyncKHR(g_egl_display, syncx);
     }
-    else if (nDisplayMode == 2)
-    {   ///////single view and left up sub single view
+    else if (nDisplayMode == 2)//左转
+    {
+        ///////single view and left up sub single view
         float fratio[6];
         fratio[0] = 1.0;
         fratio[1] = 1.0;
@@ -3020,7 +3074,7 @@ void render_normal_loop(void)
 #endif
 #endif
 
-        ////////////////single view front////////////////////
+        ////////////////single view left front////////////////////
         g_avm_screen.win_x = 0;
         g_avm_screen.win_y = 0;
         g_avm_screen.width = (698 + 100 + 100); //-60
@@ -3044,7 +3098,7 @@ void render_normal_loop(void)
         eglClientWaitSyncKHR(g_egl_display, syncx, EGL_SYNC_FLUSH_COMMANDS_BIT_KHR, 3000000000);
         eglDestroySyncKHR(g_egl_display, syncx);
     }
-    else if (nDisplayMode == 3)
+    else if (nDisplayMode == 3)//右转
     {
         float fratio[6];
         fratio[0] = 1.0;
@@ -3111,8 +3165,9 @@ void render_normal_loop(void)
         eglClientWaitSyncKHR(g_egl_display, syncx, EGL_SYNC_FLUSH_COMMANDS_BIT_KHR, 3000000000);
         eglDestroySyncKHR(g_egl_display, syncx);
     }
-    else if (nDisplayMode == 4)
-    {   /////////////stitching windows wide = 380
+    else if (nDisplayMode == 4)//前进
+    {
+        /////////////stitching windows wide = 380
         float fratio[6];
         fratio[0] = 1.0;
         fratio[1] = 1.0;
@@ -3197,7 +3252,7 @@ void render_normal_loop(void)
         eglDestroySyncKHR(g_egl_display, syncx);
     }
 
-    avm_calib_ui_process();
+    avm_calib_ui_process();//标定的UI显示
     ////////////////////upgrade ui/////////////////
     if (g_upgrade_status == XCB_AVM_UPGRADE_IDLE)
     {
@@ -3248,7 +3303,7 @@ void render_normal_loop(void)
     else
     {
         if (!bShowMcuUpdate)
-            avm_upgrade_ui_process();
+            avm_upgrade_ui_process();//升级的UI显示
         else
         {
             xcb_avmlib_Draw_Png(&avmUIMCUHandleHandle, 0);
@@ -3257,29 +3312,30 @@ void render_normal_loop(void)
         }
     }
 
-    xcb_avmlib_set_fboscreen_Outofuse(&avm_fboscreen_type);
+    xcb_avmlib_set_fboscreen_Outofuse(&avm_fboscreen_type);//告诉GPU之后的所有渲染都是渲染到显存中
     // printf("---debug xcb_avmlib_set_fboscreen_ObtainTextureID\n");
 
-    GLuint nScreenTexId = xcb_avmlib_set_fboscreen_ObtainTextureID(&avm_fboscreen_type);
+    GLuint nScreenTexId = xcb_avmlib_set_fboscreen_ObtainTextureID(&avm_fboscreen_type);//获取buffer拼接数据的 ID 号
 
     // printf("---debug xcb_avmlib_set_fboscreen_ObtainTextureID finish------------------------%d\n", nScreenTexId);
 
-    xcb_avmlib_set_fboRGBA2YUVA_Inuse(&avm_fboColorTransfer_type);
-    xcb_avmlib_Clean_FboScreen();
+    xcb_avmlib_set_fboRGBA2YUVA_Inuse(&avm_fboColorTransfer_type);//渲染到 YUVA的 buffer
+    xcb_avmlib_Clean_FboScreen();//清屏
     // printf("---debug xcb_avmlib_set_fboRGBA2YUVA_ObtainTexturePoint finish\n");
+    //把 YUVA 的数据直接搬运到了 ARM 端
     unsigned char *pImg = xcb_avmlib_set_fboRGBA2YUVA_ObtainTexturePoint(nScreenTexId, &avm_fboColorTransfer_type);
 
     glFlush();
 
     // glFinish();
-    xcb_avmlib_YUVA2NV21(pImg, pImgForSaveT1, SCREEN_W, SCREEN_H);
+    xcb_avmlib_YUVA2NV21(pImg, pImgForSaveT1, SCREEN_W, SCREEN_H);//将 YUVA格式的数据转换成NV21格式的数据
 
-    xcb_avmlib_set_fboRGBA2YUVA_Outofuse(&avm_fboColorTransfer_type);
+    xcb_avmlib_set_fboRGBA2YUVA_Outofuse(&avm_fboColorTransfer_type);//渲染到显存
 
     /////////////屏幕上显示
     xcb_avmlib_Clean_Screen();
-    xcb_avmlib_set_fboscreen_Tex2screen(nScreenTexId, &avm_fboscreen_type);
-    xcb_avmlib_swapbuffer(g_egl_display, g_egl_surface);
+    xcb_avmlib_set_fboscreen_Tex2screen(nScreenTexId, &avm_fboscreen_type);//渲染到屏幕
+    xcb_avmlib_swapbuffer(g_egl_display, g_egl_surface);//将数据显示到屏幕
 
     pthread_mutex_lock(&mutex_light);
     memcpy(pImgForSaveT, pImgForSaveT1, 1382400);
@@ -3492,6 +3548,7 @@ void avm_ui_init(void)
     xcb_avmlib_Load_Png(pngPath, g_png_RadarAlarm[2]);
     xcb_avmlib_Update_Png(&avmRadarAlarmUIHandle, 2, &(g_png_RadarAlarm[2]), 1);
 
+
     ///////////////////加载长隔条
     avmLongHLineUIHandle.win_x = 0;
     avmLongHLineUIHandle.win_y = 359;
@@ -3499,6 +3556,7 @@ void avm_ui_init(void)
     avmLongHLineUIHandle.height = LONG_HORIZONTAL_LINE_H;
     avmLongHLineUIHandle.layers_num = 1; // 12个图层
     xcb_avmlib_Draw_Png_Init(&avmLongHLineUIHandle);
+
 
     g_png_LongHLine.win_x = 0; // bg layer 0
     g_png_LongHLine.win_y = 0;
@@ -3523,6 +3581,8 @@ void avm_ui_init(void)
 
     xcb_avmlib_Update_Png(&avmShortHLineUIHandle, 0, &g_png_ShortHLine, 1);
     printf("error ui 2\n");
+
+
     ////////////加载竖条
     avmVLineUIHandle.win_x = 0;
     avmVLineUIHandle.win_y = 0;
@@ -3538,6 +3598,7 @@ void avm_ui_init(void)
 
     xcb_avmlib_Update_Png(&avmVLineUIHandle, 0, &g_png_VLine, 1);
     printf("error ui 3\n");
+
     /////////////加载左右上部子窗口
     avmUpSubWinUIHandle.win_x = 0;
     avmUpSubWinUIHandle.win_y = 0;
@@ -3559,6 +3620,7 @@ void avm_ui_init(void)
     xcb_avmlib_Update_Png(&avmUpSubWinUIHandle, 0, &g_png_UpSubWinImg[0], 1);
     xcb_avmlib_Update_Png(&avmUpSubWinUIHandle, 1, &g_png_UpSubWinImg[1], 1);
     printf("error ui 4\n");
+
     ////////////////加载单一字符图片
     avmOneCharLabelUIHandle.win_x = 0;
     avmOneCharLabelUIHandle.win_y = 0;
@@ -3584,6 +3646,7 @@ void avm_ui_init(void)
     xcb_avmlib_Update_Png(&avmOneCharLabelUIHandle, 1, &g_png_OneCharLabelImg[1],
                           1);
     printf("error ui 5\n");
+
     //////////////////加载双字符图片
     avmTwoCharLabelUIHandle.win_x = 0;
     avmTwoCharLabelUIHandle.win_y = 0;
@@ -3622,6 +3685,7 @@ void avm_ui_init(void)
     xcb_avmlib_Update_Png(&avmTwoCharLabelUIHandle, 3, &g_png_TwoCharLabelImg[3],
                           1);
     printf("error ui 6\n");
+
     ///////////////摄像头检测
     avmCameraCheckUIHandle.win_x = 0;
     avmCameraCheckUIHandle.win_y = 0;
@@ -3637,6 +3701,7 @@ void avm_ui_init(void)
 
     xcb_avmlib_Update_Png(&avmCameraCheckUIHandle, 0, &g_png_CameraCheckImg, 1);
     printf("error ui 7\n");
+
     ////////////////注意周边安全
     avmAttentionAroundUIHandle.win_x = 0;
     avmAttentionAroundUIHandle.win_y = 0;
@@ -3654,6 +3719,7 @@ void avm_ui_init(void)
                           &g_png_AttentionAroundImg, 1);
     printf("error ui 8\n");
 
+
     /////////////////////ui version init//////////////////////
     g_png_version = new png_texture_t[MAX_VERSION_PNG];
     for (int i = 0; i < MAX_VERSION_PNG; i++)
@@ -3663,13 +3729,18 @@ void avm_ui_init(void)
         sprintf(pngPath, "%s/%s", g_pPngDir, init_version_bmp_res[i].file_name);
         xcb_avmlib_Load_Png(pngPath, g_png_version[i]);
     }
+//    gettimeofday(&test2, NULL);
     avmUIVersionbg.win_x = 0;
     avmUIVersionbg.win_y = 0;
     avmUIVersionbg.width = 1280;
     avmUIVersionbg.height = 720;
     avmUIVersionbg.layers_num = 1; // 1个图层
     xcb_avmlib_Draw_Png_Init(&avmUIVersionbg);
+//    gettimeofday(&test1, NULL);
+//    Time1 = 1000000 * (test1.tv_sec - test2.tv_sec) + test1.tv_usec - test2.tv_usec; //默认微秒为单位
+//    printf("******************************绘制版本信息UI后 = %lf(ms)\n", Time1 / 1000);
     xcb_avmlib_Update_Png(&avmUIVersionbg, 0, &g_png_version[0], 1);
+
 
     // CPU NUM 0-9图层------7
 
@@ -3688,6 +3759,7 @@ void avm_ui_init(void)
         avmUIVersionNum[i].width = (g_png_cpuNumH[i].width);
         avmUIVersionNum[i].height = g_png_cpuNumH[i].height;
         avmUIVersionNum[i].layers_num = 1; // 1个图层
+
         xcb_avmlib_Draw_Png_Init(&(avmUIVersionNum[i]));
         xcb_avmlib_Update_Png(&(avmUIVersionNum[i]), 0, &(g_png_cpuNumH[i]), 1);
     }
@@ -3892,6 +3964,7 @@ void upgrade_proc(void)
 
 void DynamicModelInit()
 {
+    //动态模型拼接
     if (-1 == xcb_avmlib_stitching_Dynamicmodel_Init("/extp/app/gpu_data/AngleModel_2D", &g_stitching_Handle))
     {
         printf("init dynamic model /extp/app/gpu_data/AngleModel_2D error\r\n");
@@ -4067,23 +4140,37 @@ void avm_proc(void)
 {
     system("fbinit");
 #if 1
-    render_init();
-    avm_img_roi_init();
+    render_init();//渲染
+//    gettimeofday(&test1, NULL);
+//    Time1 = 1000000 * (test1.tv_sec - test_start.tv_sec) + test1.tv_usec - test_start.tv_usec; //默认微秒为单位
+//    printf("******************************渲染初始化后 = %lf(ms)\n", Time1 / 1000);
+    avm_img_roi_init();//ROI以及各视图的位置大小参数
+//    gettimeofday(&test1, NULL);
+//    Time1 = 1000000 * (test1.tv_sec - test_start.tv_sec) + test1.tv_usec - test_start.tv_usec; //默认微秒为单位
+//    printf("******************************ROI初始化后 = %lf(ms)\n", Time1 / 1000);
     printf("avm_img_roi_init end\n");
-    avm_ui_init();
+    avm_ui_init();//UI
+//    gettimeofday(&test1, NULL);
+//    Time1 = 1000000 * (test1.tv_sec - test_start.tv_sec) + test1.tv_usec - test_start.tv_usec; //默认微秒为单位
+//    printf("******************************UI初始化后 = %lf(ms)\n", Time1 / 1000);
+
 
 #if DVRONOFF
     ///////////////存储线程的开辟需要在时间素材读入之后
-    pthread_create(&tidDvr0[0], NULL, DvrData0, NULL);
+    pthread_create(&tidDvr0[0], NULL, DvrData0, NULL);//存储线程
 #endif
 
-    avm_ui_init_upgrad_calib();
+    avm_ui_init_upgrad_calib();//升级、标定UI初始化
+//    gettimeofday(&test1, NULL);
+//    Time1 = 1000000 * (test1.tv_sec - test_start.tv_sec) + test1.tv_usec - test_start.tv_usec; //默认微秒为单位
+//    printf("******************************升级、标定UI初始化后 = %lf(ms)\n", Time1 / 1000);
     printf("ui init end\n");
+
 #endif
     printf("dynamic model construction begin\r\n");
 #ifdef DYNAMIC_CAR_MODEL
     sleep(1);
-    DynamicModelInit();
+    DynamicModelInit();//动态模型
     sleep(1);
 #endif
     printf("dynamic model construction end\r\n");
@@ -4093,7 +4180,7 @@ void avm_proc(void)
         if (runRender)
         {
             //          printf("goto render_normal_loop \n");
-            render_normal_loop();
+            render_normal_loop();//循环渲染
             display_flag = 1;
             app_start_flag = 1;
             record_start_flag = 1;
@@ -4102,7 +4189,7 @@ void avm_proc(void)
         if (!runRender)
         {
 
-            if (g_port.m_tMsg_t7.emCalib == XCB_AVM_CALIB_CLOSED && autoCalibFlag)
+            if (g_port.m_tMsg_t7.emCalib == XCB_AVM_CALIB_CLOSED && autoCalibFlag)//自动标定
             {
                 runRender = 1;
                 record_start_flag = 0;
@@ -4111,7 +4198,7 @@ void avm_proc(void)
                 g_port.m_tMsg_t7.emCalib = XCB_AVM_CALIB_OPENED;
                 printf("recieved auto calib command\r\n");
             }
-            else
+            else//手动标定
             {
                 if (!qtRun)
                 {
@@ -4129,7 +4216,7 @@ void avm_proc(void)
                     save_yuv_img(buf3->planes[0].mem, "F");
 #endif
                     printf("goto run QT---- \n");
-                    irkey->stopgetIrKeyVal();
+                    irkey->stopgetIrKeyVal();//遥控器
                     qtRun = 1;
                     system("/extp/app/runqt.sh");
                 }
@@ -4177,7 +4264,7 @@ void load_adas_fun_disp(void)
 {
     upgrade_proc();
     upgrade_com_init();
-    pthread_create(&g_thdCalib, NULL, avm_calib_proc, NULL);
+    pthread_create(&g_thdCalib, NULL, avm_calib_proc, NULL);//自动标定线程
 }
 
 /********************************************************************************/
@@ -4200,7 +4287,7 @@ void mcu_updata_process()
             // printf("xcb mcu status = %d\n", mcu_status);
             if (mcu_status == 0)
             {
-                g_port.start_mcu_upg_cmd();
+                g_port.start_mcu_upg_cmd();//启动MCU更新
                 printf("mcu upate start\r\n");
                 ///////////////////////////////show mcu update image///////////////////////
             }
@@ -4231,7 +4318,7 @@ void mcu_updata_process()
             {
                 mcu_finsh_count = 0;
                 upg_status_flag = 0;
-                g_port.reset_mcu_cmd();
+                g_port.reset_mcu_cmd();//重置MCU
                 printf("g_port.reset_mcu_cmd();\r\n");
             }
         }
@@ -4269,7 +4356,7 @@ static void repeate_record_disp(void)
         size_t total = 0;
         size_t user = 0;
         size_t free_space = 0;
-        GetSdCardCurCapacity(card_path, &total, &user);
+        GetSdCardCurCapacity(card_path, &total, &user);//获取卡容量
         free_space = total - user;
 
         if (free_space < CARCD_FILE_DISP_NUM) //当前卡空间小于100M进行处理
@@ -4297,18 +4384,18 @@ void *otherRun(void *arg)
         // if(nMCUUpdateFlag)
         {
             if ((!is_file_exist(MOUNT_DIR1) || !is_file_exist(MOUNT_DIR2)) &&
-                    (!is_file_exist(APP_PACKET_DIR) || !is_file_exist(OS_PACKET_DIR) ||
-                     !is_file_exist(MOUNT_DIR2 "/APP") || !is_file_exist(MOUNT_DIR2 "/OS") ||
-                     !is_file_exist(MCU_UPDATE_NAME) || !is_file_exist(MCU_UPDATE_NAME1)))
+                (!is_file_exist(APP_PACKET_DIR) || !is_file_exist(OS_PACKET_DIR) ||
+                 !is_file_exist(MOUNT_DIR2 "/APP") || !is_file_exist(MOUNT_DIR2 "/OS") ||
+                 !is_file_exist(MCU_UPDATE_NAME) || !is_file_exist(MCU_UPDATE_NAME1)))
             {
-                if (sd_status == REMOVE)
+                if (sd_status == REMOVE)//检测SD卡
                 {
                     sd_status = PLUG_IN;
                     g_port.send_beat_off();
                     bool bIsExit = false;
                     if (!is_file_exist(MCU_UPDATE_NAME))
                     {
-                        if (1 == Get_file_name_is_specific_directory(MCU_UPDATE_NAME, "bin", mcu_name))
+                        if (1 == Get_file_name_is_specific_directory(MCU_UPDATE_NAME, "bin", mcu_name))//获取文件名的具体位置
                             bIsExit = true;
 
                         // int trlen = strlen(mcu_name);
@@ -4375,15 +4462,14 @@ void *otherRun(void *arg)
                 }
             }
         } // end nMCUUpdateFlag
-
         usleep(10000);
-        mcu_updata_process();
+        mcu_updata_process();//MCU更新
         if (display_flag == 1)
         {
             if (adas_fun_flag == 0)
             {
                 adas_fun_flag = 1;
-                load_adas_fun_disp();
+                load_adas_fun_disp();//加载自动采集功能显示
             }
         }
 
@@ -4401,7 +4487,8 @@ void *otherRun(void *arg)
                     printf("\e[1;32m 1 SD plug in\e[0m \n");
                 }
                 else
-                {   // sd_status == PLUG_IN;record_start_flag = 1;
+                {
+                    // sd_status == PLUG_IN;record_start_flag = 1;
                     sd_detec_count++;
                     if (sd_detec_count >= CARD_COUNT) // 100s检侧一次 20MS*5=100ms
                     {
@@ -4411,11 +4498,12 @@ void *otherRun(void *arg)
                 }
             }
             else
-            {   //检测SD移除
+            {
+                //检测SD移除
                 if (TF_status == PLUG_IN)
                 {
                     TF_status = REMOVE;
-                    StopRecord();
+                    StopRecord();//停止录像
                     record_start_flag = 0;
                     printf("yhc  \e[1;32m 2 SD remove  \e[0m \n");
                 }
@@ -4449,16 +4537,26 @@ static void readFifoMsg()
         fcntl(fifo_fd, F_SETFL, flag);
     }
 }
+void My_Test(void)
+{
+    while(1)
+    {
+        printf("***********************************************%d\n",g_tBirdViewParams.win_width);
+        sleep(2);
 
+    }
+
+}
 int main(int argc, char *argv[])
 {
+    gettimeofday(&test_start, NULL);//获取APP启动时间
     system("mount -t debugfs none /sys/kernel/debug");
     if (access("/extp/app/6laneyuv", F_OK) != 0)
     {
         mkdir("/extp/app/6laneyuv", 0777);
     }
     irkey = new IrRemoteCtrl();
-    irkey->start2getIrKeyVal(cbGetIrKeyVal);
+    irkey->start2getIrKeyVal(cbGetIrKeyVal);//遥控器
     system("cp /extp/app/calib_bak.ini /extp/app/calib.ini -vf");
     qtRun = 0;
     adas_fun_flag = 0;
@@ -4470,7 +4568,7 @@ int main(int argc, char *argv[])
     system("cat /sys/devices/system/cpu/cpufreq/policy0/scaling_governor");
     system("cat /sys/devices/virtual/thermal/thermal_zone0/trip_point_*_temp");
 
-    get_exe_path(g_pAvmPath, PATH_MAX);
+    get_exe_path(g_pAvmPath, PATH_MAX);//获取路径
     record_start_flag = 0;
 
     sprintf(g_pCalibConfigDir, "%scalibData", g_pAvmPath);
@@ -4482,14 +4580,14 @@ int main(int argc, char *argv[])
     memset(pImgForSaveT, 128, 1280 * 720 * 1.5);
 #if 1
     printf("[XT6lane_validation][%s][%d][%s][%s] *******\n", __func__, __LINE__, __DATE__, __TIME__);
-    cpu_id_check();
+    cpu_id_check();//检查cpu_id
 
-    int ret = xcb_check_validation(SAVE_LICENSE_PATH);
+    int ret = xcb_check_validation(SAVE_LICENSE_PATH);//检查LICENSE文件路径
     printf("cur encry type = %d\n", ret);
     if (ret == -1)
     {
         printf("[XT6lane]xcb start serial Encry Disp %s \n", UART_ENCTY);
-        start_serial_encty_disp(UART_ENCTY);
+        start_serial_encty_disp(UART_ENCTY);//启动显示加密串口
         while (1)
         {
             if (!is_file_exist(SAVE_LICENSE_PATH))
@@ -4506,7 +4604,6 @@ int main(int argc, char *argv[])
         printf("[XT6lane]serial validation Encry success \n");
     }
 #endif
-
     for (int i = 0; i < 6; i++)
     {
         if (sem_init(&sema[i], 0, 0) != 0)
@@ -4524,7 +4621,7 @@ int main(int argc, char *argv[])
         pStitchingIm[i] = (unsigned char *)malloc(1280 * 720 * 1.5);
     }
 
-    ReadCarBasicInfo();
+    ReadCarBasicInfo();//读取汽车基本信息(从ini文件读取参数)
 
     memset(pImgForSave, 128, 1280 * 720 * 1.5);
     memset(pImgForSaveT, 128, 1280 * 720 * 1.5);
@@ -4537,13 +4634,13 @@ int main(int argc, char *argv[])
     open_device012345(0, 4);
 #endif
 #if DVRONOFF
-    DvrInit1Lane(DVRTIME, 1280, 720, 1280, 720, 4, 25, 1); // 3min
+    DvrInit1Lane(DVRTIME, 1280, 720, 1280, 720, 4, 25, 1); // 3min//DVR功能
 #endif
 
     printf("[XT6lane_startSerialThd][%s][%d][%s][%s] *******\n", __func__, __LINE__, __DATE__, __TIME__);
-    g_port.startSerialThd();
-    avm_rectime_init();
-    pthread_create(&g_thdother, NULL, otherRun, NULL);
+    g_port.startSerialThd();//解析MCU数据
+    avm_rectime_init();//时间素材读入
+    pthread_create(&g_thdother, NULL, otherRun, NULL);//其他运行的线程
 
 #if ISDMA == 1
     pthread_create(&g_thdCamera0, NULL, CameraDisplay0, NULL);
@@ -4572,7 +4669,17 @@ int main(int argc, char *argv[])
 
     printf("[XT6lane][build_time][%s][%d][%s][%s] *******\n", __func__, __LINE__, __DATE__, __TIME__);
 
-    avm_proc();
+//    gettimeofday(&test1, NULL);
+//    Time1 = 1000000 * (test1.tv_sec - test_start.tv_sec) + test1.tv_usec - test_start.tv_usec; //默认微秒为单位
+//    printf("******************************主循环前 = %lf(ms)\n", Time1 / 1000);
+
+#if PANLI_TEST
+    pthread_t test;
+    pthread_create(&test, NULL, My_Test, NULL);
+    usleep(10000);
+#endif
+    avm_proc();//主线程
+
 
     printf("avm over!\n");
     pthread_join(g_thdother, NULL);

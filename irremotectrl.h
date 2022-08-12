@@ -37,7 +37,7 @@ enum KEY_RELEASE_VAL{
 
 typedef void (*callBack)(int *pout/*,void *viewParam*/);
 
-class IrRemoteCtrl
+class IrRemoteCtrl//遥控器
 {
 public:
     IrRemoteCtrl();

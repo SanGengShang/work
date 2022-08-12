@@ -1710,7 +1710,7 @@ void serial::receive_cmd_process(frameType &rec)
     }
 
   }
-  else if (rec.msgID == u8_6)  //电源模式
+  else if (rec.msgID == u8_6)  //节能模式
   { // energe
     printf("energe\n");
 	frist_data = 0;
@@ -1725,7 +1725,7 @@ void serial::receive_cmd_process(frameType &rec)
       m_tMsg_t7.emEnerge = XCB_AVM_ENERGE_MODE_REBOOT;
     }
   }
-  else if(rec.msgID == u8_8)
+  else if(rec.msgID == u8_8)//辅助驾驶开关
   {
         frist_data = 0;
 	    uint8_t data1 = rec.msgData[0].whole;
@@ -1808,7 +1808,7 @@ void serial::receive_cmd_process(frameType &rec)
 	  upg_status = 2;
     printf("serial upg_status %d\r\n", upg_status);
   }
-  else if (rec.msgID == 0x31)
+  else if (rec.msgID == 0x31)//角度信息
   {
     m_tMsg_t7.emType = XCB_AVM_MSG_T7_ANGLEVERSION;
     m_tMsg_t7.ganglemcu[0] = rec.msgData[4].whole/10;
@@ -2014,7 +2014,7 @@ int my_itoa(int val, char* buf)
 void serial::receive_msg_process(frameType &rec)
 {
   //printf("message info: %d\r\n",rec.msgID);
-  if (rec.msgID == u8_2)
+  if (rec.msgID == u8_2)//汽车的状态
   { // car state
     // printf("car state\n");
     frist_data = 0;
@@ -2103,7 +2103,7 @@ void serial::receive_msg_process(frameType &rec)
 ////////////////////依据车身信息获取显示模式信息
     Xingtu_Vehicle_Status_Information_Processing();
   }
-  else if (rec.msgID == u8_3)
+  else if (rec.msgID == u8_3)//触摸操作
   { // touch operation
     pthread_rwlock_wrlock(&rwlock);
     m_tMsg_t7.emType = XCB_AVM_MSG_T7_TOUCH_OPERATE;
@@ -2151,7 +2151,7 @@ void serial::receive_msg_process(frameType &rec)
 	  //printf("xcb tTouch.emOpt=%d,tTouch.u16X=%d,tTouch.u16Y=%d\n",tTouch.emOpt,tTouch.u16X,tTouch.u16Y);
   }
   /////////for xingtu use
-  else if (rec.msgID == 0x30)
+  else if (rec.msgID == 0x30)//转向角度
   {
 #if 0
     printf("[%s][%d] ****time1*** rec.msgID == 0x30=%d \n", __func__,__LINE__,rec.msgID);
@@ -2257,7 +2257,7 @@ void serial::receive_msg_process(frameType &rec)
 		//printf("head angle %d \r\n", tHeadangle.nHeadAngle);
 	}
   }
-  else if (rec.msgID == 0x31)
+  else if (rec.msgID == 0x31)//角度信息
   {
     m_tMsg_t7.emType = XCB_AVM_MSG_T7_ANGLEVERSION;
     m_tMsg_t7.ganglemcu[0] = rec.msgData[4].whole/10;

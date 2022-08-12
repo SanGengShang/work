@@ -82,6 +82,16 @@
 #include "file_list.h"
 #include <time.h>
 #include "irremotectrl.h"
+
+
+
+
+/*************************panli*******20220812************start*******************************/
+#define PANLI_TEST 0
+double Time1,Time2,Time3,Time4,Time5,Time6,Time7,Time8;
+
+/**************************panli**************************end******************************/
+
 /**********************************************************************************************/
 IrRemoteCtrl *irkey;
 CIni ini;
@@ -143,7 +153,9 @@ int record_start_flag = 0;
 int app_start_flag = 0;
 int app_display_flag = 0;
 //测试APP启动时间
-struct timeval app_start, app_end;
+//struct timeval app_start, app_end;
+struct timeval app_start, app_end,test1,test2,test3,test4,test5,test6,test7,test_start;
+
 //////////////////////////////////////////////////////
 
 pthread_t tidDvr0[CUSTOM_COUNT];
