@@ -6,7 +6,7 @@ typedef struct {
     void *viewParam;
 }Info;
 Info info;
-pthread_t thr1;
+pthread_t thr1;    //kk
 pthread_mutex_t mut;
 int fd = -1;
 int isIrCtrlStop = -1;
